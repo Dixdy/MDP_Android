@@ -42,6 +42,10 @@ public class BluetoothConnectionService {
     public BluetoothConnectionService(Context context) {
         mContext = context;
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        if (mBluetoothAdapter == null) {
+            Log.d(TAG, "Device does not support bluetooth connection");
+        }
+
         start();
     }
 
