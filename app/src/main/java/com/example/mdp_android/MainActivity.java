@@ -129,6 +129,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     if (device.getName() != null) {
                         mBTDevices.add(device);
                         Log.d(TAG, "onReceive: " + device.getName() + ": " + device.getAddress());
+                        //TODO: Change to dialog- may need to modify DeviceListAdapter
                         mDeviceListAdapter = new DeviceListAdapter(context, R.layout.device_adapter_view, mBTDevices);
                         lvNewDevices.setAdapter(mDeviceListAdapter);
                     }
@@ -337,7 +338,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         //first cancel discovery because its very memory intensive.
         mBluetoothAdapter.cancelDiscovery();
-
+        //TODO:Alter to implement which pointer from dialog
         Log.d(TAG, "onItemClick: You Clicked on a device.");
         String deviceName = mBTDevices.get(i).getName();
         String deviceAddress = mBTDevices.get(i).getAddress();

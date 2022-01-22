@@ -180,8 +180,7 @@ public class BluetoothConnectionService {
 
 
     /**
-     * Start the chat service. Specifically start AcceptThread to begin a
-     * session in listening (server) mode. Called by the Activity onResume()
+     *  Called by the Activity onResume()
      */
     public synchronized void start() {
         Log.d(TAG, "start");
