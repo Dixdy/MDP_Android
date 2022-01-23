@@ -42,6 +42,10 @@ public class BluetoothConnectionService {
     public BluetoothConnectionService(Context context) {
         mContext = context;
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        if (mBluetoothAdapter == null) {
+            Log.d(TAG, "Device does not support bluetooth connection");
+        }
+
         start();
     }
 
@@ -176,8 +180,7 @@ public class BluetoothConnectionService {
 
 
     /**
-     * Start the chat service. Specifically start AcceptThread to begin a
-     * session in listening (server) mode. Called by the Activity onResume()
+     *  Called by the Activity onResume()
      */
     public synchronized void start() {
         Log.d(TAG, "start");
