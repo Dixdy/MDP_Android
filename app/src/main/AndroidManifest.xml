@@ -21,16 +21,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MDP_Android" >
 
-    <activity
-        android:name=".MainActivity"
-        android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
+        <activity android:name=".Bluetooth"
+            android:theme="@style/BluetoothTheme">
+        </activity>
     </application>
 
 </manifest>
